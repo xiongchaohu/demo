@@ -15,7 +15,12 @@ app.get('/query', function (req, res) {
 
 app.get('/params/:name', function (req, res) {
     res.send(req.params);
-})
+});
+
+app.post('/json', function (req, res) {
+    res.send(req.body);
+});
+
 app.listen(3000, function () {
     console.log('example app Listening on port 3000!');
 });

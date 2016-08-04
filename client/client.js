@@ -23,3 +23,16 @@ request
             console.log('Oh no! error ' + res.text);
         }
     });
+
+request
+    .post('http://localhost:3000/json')
+    .set('Content-Type', 'application/json')
+    .send({name: 'hxc'})
+    .end(function (err, res) {
+        if (err) throw err;
+        if (res.ok) {
+            console.log('json方式' + res.text);
+        } else {
+            console.log('Oh no! error ' + res.text);
+        }
+    });

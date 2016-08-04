@@ -24,6 +24,18 @@ describe('Get /params/:name', function () {
             .end(function (err, res) {
                 expect(JSON.parse(res.text)).toEqual({name: 'hxc'});
                 done(err);
-            })
-    })
-})
+            });
+    });
+});
+
+describe('Post /json', function () {
+    it('should get a parameter from json', function (done) {
+        request
+            .post('/json')
+            .send({name: 'hxc'})
+            .end(function (err, res) {
+                expect(JSON.parse(res.text)).toEqual({name: 'hxc'});
+                done();
+            });
+    });
+});
