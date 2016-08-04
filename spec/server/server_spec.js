@@ -39,3 +39,15 @@ describe('Post /json', function () {
             });
     });
 });
+
+describe('Post /header', function () {
+    it('should get a parameter from json', function (done) {
+        request
+            .post('/header')
+            .set({name: 'hxc'})
+            .end(function (err, res) {
+                expect(res.text).toEqual('hxc');
+                done();
+            });
+    });
+});

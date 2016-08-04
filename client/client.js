@@ -36,3 +36,17 @@ request
             console.log('Oh no! error ' + res.text);
         }
     });
+
+request
+    .post('localhost:3000/header')
+    .set({name: 'hxc'})
+    .end(function (err, res) {
+        if (res.ok) {
+            console.log('header方式' + res.text);
+        } else {
+            console.log('Oh!no!error' + res.text);
+        }
+    });
+
+
+
