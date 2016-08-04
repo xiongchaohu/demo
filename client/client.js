@@ -48,5 +48,17 @@ request
         }
     });
 
+request
+    .post('localhost:3000/form')
+    .send('name=hxc')
+    .send('value=123')
+    .end(function (err, res) {
+        if (res.ok) {
+            console.log('form方式' + res.text);
+        } else {
+            console.log('Oh!no!error' + res.text);
+        }
+    });
+
 
 

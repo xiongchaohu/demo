@@ -41,12 +41,24 @@ describe('Post /json', function () {
 });
 
 describe('Post /header', function () {
-    it('should get a parameter from json', function (done) {
+    it('should get a parameter from header', function (done) {
         request
             .post('/header')
             .set({name: 'hxc'})
             .end(function (err, res) {
                 expect(res.text).toEqual('hxc');
+                done();
+            });
+    });
+});
+
+describe('Post /form', function () {
+    it('should get a parameter from form', function (done) {
+        request
+            .post('/form')
+            .send({name: 'hxc'})
+            .end(function (err, res) {
+                expect(JSON.parse(res.text)).toEqual({name: 'hxc'});
                 done();
             });
     });
