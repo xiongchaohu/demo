@@ -13,3 +13,13 @@ request
             console.log('Oh no! error ' + res.text);
         }
     });
+
+request
+    .get('localhost:3000/params/hxc')
+    .end(function (err, res) {
+        if (res.ok) {
+            console.log('params方式' + res.text);
+        } else {
+            console.log('Oh no! error ' + res.text);
+        }
+    });

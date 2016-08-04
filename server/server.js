@@ -1,20 +1,23 @@
 /**
  * Created by hxc on 16-8-4.
  */
-const express=require('express');
-const bodyParser=require('body-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
 
-var app=express();
+var app = express();
 
-app.use(bodyParser.urlencoded({extend:true}));
+app.use(bodyParser.urlencoded({extend: true}));
 app.use(bodyParser.json());
 
-app.get('/query',function (req,res) {
+app.get('/query', function (req, res) {
     res.send(req.query);
 });
 
-app.listen(3000,function(){
+app.get('/params/:name', function (req, res) {
+    res.send(req.params);
+})
+app.listen(3000, function () {
     console.log('example app Listening on port 3000!');
 });
 
-module.exports=app;
+module.exports = app;

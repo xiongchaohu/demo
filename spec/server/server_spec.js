@@ -16,3 +16,14 @@ describe('Get /query', function () {
             });
     });
 });
+
+describe('Get /params/:name', function () {
+    it('shoule get a parameter from params', function (done) {
+        request
+            .get('/params/hxc')
+            .end(function (err, res) {
+                expect(JSON.parse(res.text)).toEqual({name: 'hxc'});
+                done(err);
+            })
+    })
+})
